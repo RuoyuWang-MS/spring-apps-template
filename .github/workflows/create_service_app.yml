@@ -2,10 +2,10 @@ on: [workflow_dispatch]
 
 env: 
   subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
-  rg_name: ruoyu-test-rg
-  service_name: ruoyu-test
-  app_name: hello
-  location: eastasia
+  rg_name: <rg-name>
+  service_name: <service-name>
+  app_name: <app-name>
+  location: <region>
 
 jobs:
   Create_service_and_app_job:
@@ -25,6 +25,7 @@ jobs:
         shell: bash
         env: 
           subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
-          rg_name: ruoyu-test-rg
-          service_name: ruoyu-test
-          app_name: hello
+          rg_name: ${{ env.rg_name }}
+          service_name: ${{ env.service_name }}
+          app_name: ${{ env.app_name }}
+          location: ${{ env.location }}

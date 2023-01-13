@@ -1,8 +1,8 @@
 on: [workflow_dispatch]
 env:
   subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
-  service_name: ruoyu-test
-  app_name: hello
+  service_name: <service-name>
+  app_name: <app-name>
 
 jobs:
   Deploy_job:
